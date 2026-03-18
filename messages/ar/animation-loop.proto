@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Augmencia.Protos.AR;
+
+enum AnimationLoop {
+    NONE = 0;
+    RESTART = 1;
+    YOYO = 2;
+}

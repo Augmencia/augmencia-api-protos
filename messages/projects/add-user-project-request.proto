@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Projects;
+
+message AddUserProjectRequest {
+    string name = 1;
+    repeated string invited_users_emails = 2;
+}   

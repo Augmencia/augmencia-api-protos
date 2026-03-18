@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Users;
+
+import "messages/common/language-code.proto";
+
+message CreateUserRequest {
+  string username = 1;
+  string password = 2;
+  string email = 3;
+  optional Common.LanguageCode language_code = 4;
+}

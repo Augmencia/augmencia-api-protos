@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Projects;
+
+import "messages/common/language-code.proto";
+
+message JoinProjectRequest {
+    string token = 1;
+    string verification_code = 2;
+    optional Common.LanguageCode language_code = 3;
+}

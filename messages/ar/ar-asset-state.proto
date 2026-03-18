@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package Augmencia.Protos.AR;
+
+import "messages/ar/vector2.proto";
+import "messages/ar/vector3.proto";
+import "messages/ar/vector4.proto";
+import "messages/ar/color.proto";
+
+message ARAssetState {
+    Vector3 local_position = 1;
+    Vector4 local_rotation = 2;
+    Vector3 local_scale = 3;
+    Vector2 anchor = 4;
+    Color color = 5;
+    int32 next_state_in_ms = 6;
+}

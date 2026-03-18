@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package Augmencia.Protos.RemoteAssistance;
+
+import "messages/remote-assistance/connected-event.proto";
+import "messages/remote-assistance/peer-added-an-ice-candidate-event.proto";
+import "messages/remote-assistance/peer-connected-event.proto";
+import "messages/remote-assistance/peer-set-session-description-event.proto";
+
+message RoomEvent {
+    oneof event {
+        ConnectedEvent connected = 2;
+        PeerConnectedEvent peer_connected = 3;
+        PeerAddAnIceCandidateEvent peer_added_an_ice_candidate = 4;
+        PeerSetSessionDescriptionEvent peer_set_session_description = 5;
+        string peer_disconnected = 6;
+    }
+}

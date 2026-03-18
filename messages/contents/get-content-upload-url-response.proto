@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Contents;
+
+import "messages/common/key-value-strings.proto";
+
+message GetContentUploadUrlResponse {
+    string content_id = 1;
+    string upload_url = 2;
+    repeated Common.KeyValueStrings form_data = 3;
+}

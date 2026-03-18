@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Augmencia.Protos.RemoteAssistance;
+
+message SendSessionDescriptionToPeerRequest {
+     string peer_id = 1;
+     string type = 2;
+     string sdp = 3;
+}

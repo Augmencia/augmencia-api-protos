@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Organizations;
+
+message AcceptOrganizationInvitationRequest {
+  string token = 1;
+  string code = 2;
+}

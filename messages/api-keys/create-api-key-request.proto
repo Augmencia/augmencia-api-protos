@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Augmencia.Protos.ApiKeys;
+
+message CreateAPIKeyRequest {
+	string name = 1;
+	optional string organization_id = 2;
+	bool can_manage_projects = 3;
+	bool can_manage_projects_members = 4;
+	bool can_manage_projects_assets = 5;
+	bool can_manage_projects_ar_assets = 6;
+	int64 expiration_date = 7;
+}

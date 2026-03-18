@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Events;
+
+import "messages/ar/ar-asset.proto";
+import "messages/ar/ar-asset-id-with-context-id.proto";
+
+message ARAssetEvent {
+    oneof event {
+        AR.ARAsset added = 1;
+        AR.ARAsset modified = 2;
+        AR.ARAssetIdWithContextId deleted = 3;
+    }
+}

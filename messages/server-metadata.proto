@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Augmencia.Protos;
+
+message ServerMetadata {
+	string version = 1;
+	string oidc_authority = 2;
+	string oidc_audience = 3;
+	bool require_oidc_profiles = 4;
+	bool can_create_users = 5;
+}

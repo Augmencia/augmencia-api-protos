@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Augmencia.Protos.AR;
+
+message ARAssetIdWithContextId {
+    string context_id = 1;
+    string ar_asset_id = 2;
+}

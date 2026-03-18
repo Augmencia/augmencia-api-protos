@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Organizations;
+
+message DeleteMembersFromOrganizationRequest {
+  string organization_id = 1;
+  repeated string user_ids = 2;
+}

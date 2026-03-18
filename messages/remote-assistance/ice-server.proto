@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Augmencia.Protos.RemoteAssistance;
+
+message IceServer {
+    repeated string urls = 1;
+    optional string username = 2;
+    optional string credential = 3;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Assets;
+
+import "messages/assets/content.proto";
+
+message Object3D {
+    string id = 1;
+    string name = 2;
+    string parent_id = 3;
+    int64 creation_date = 4;
+    int64 modification_date = 5;
+    Content content = 6;
+}

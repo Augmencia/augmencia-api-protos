@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Organizations;
+
+import "messages/organizations/organization-group-member.proto";
+
+message CreateOrganizationGroupRequest {
+  string organization_id = 1;
+  string name = 2;
+  bool can_manage_members = 3;
+  bool can_manage_api_keys = 4;
+  bool can_manage_projects = 5;
+  bool can_create_projects = 6;
+  bool can_perform_calls = 7;
+  repeated OrganizationGroupMember members = 8;
+}

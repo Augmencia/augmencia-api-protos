@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Organizations;
+
+message DeleteOrganizationRequest {
+  string id = 1;
+}

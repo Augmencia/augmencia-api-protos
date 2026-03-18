@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Common;
+
+message CallsLimits {
+  bool can_call_in_hd = 1;
+  int32 calls_data_limit_in_mib = 2;
+  int32 calls_data_used_in_mib = 3;
+}

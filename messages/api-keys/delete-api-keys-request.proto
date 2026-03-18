@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package Augmencia.Protos.ApiKeys;
+
+message DeleteAPIKeysRequest {
+	repeated string ids = 1;
+}

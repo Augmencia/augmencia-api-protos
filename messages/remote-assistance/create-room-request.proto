@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package Augmencia.Protos.RemoteAssistance;
+
+message CreateRoomRequest {
+     optional string organization_id = 1;
+}

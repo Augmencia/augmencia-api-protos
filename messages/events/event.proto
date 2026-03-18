@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Events;
+
+import "google/protobuf/wrappers.proto";
+
+import "messages/events/organization-event.proto";
+import "messages/events/project-event.proto";
+import "messages/events/asset-event.proto";
+import "messages/events/ar-asset-event.proto";
+
+message Event {
+    oneof event {
+        OrganizationEvent organization_event = 1;
+        ProjectEvent project_event = 2;
+        AssetEvent asset_event = 3;
+        ARAssetEvent ar_asset_event = 4;
+        string data = 5;
+    }
+}

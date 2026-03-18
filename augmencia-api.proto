@@ -1,0 +1,130 @@
+syntax = "proto3";
+
+package Augmencia.Protos;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+
+import "messages/server-metadata.proto";
+
+import "messages/users/create-user-request.proto";
+import "messages/users/modify-user-profile-request.proto";
+import "messages/users/verify-user-request.proto";
+
+import "messages/organizations/accept-organization-invitation-request.proto";
+import "messages/organizations/create-organization-group-request.proto";
+import "messages/organizations/create-organization-request.proto";
+import "messages/organizations/delete-organization-groups-request.proto";
+import "messages/organizations/delete-organization-request.proto";
+import "messages/organizations/delete-members-from-organization-request.proto";
+import "messages/organizations/leave-organization-request.proto";
+import "messages/organizations/modify-organization-group-request.proto";
+import "messages/organizations/modify-organization-members-request.proto";
+import "messages/organizations/modify-organization-request.proto";
+import "messages/organizations/organization.proto";
+import "messages/organizations/organization-group.proto";
+import "messages/organizations/set-members-invitations-to-organization-request.proto";
+
+import "messages/api-keys/api-key-metadata.proto";
+import "messages/api-keys/create-api-key-request.proto";
+import "messages/api-keys/create-api-key-response.proto";
+import "messages/api-keys/delete-api-keys-request.proto";
+import "messages/api-keys/get-api-keys-request.proto";
+
+import "messages/projects/add-organization-project-request.proto";
+import "messages/projects/add-user-project-request.proto";
+import "messages/projects/join-project-request.proto";
+import "messages/projects/project.proto";
+
+import "messages/contents/content-id-with-project-id.proto";
+import "messages/contents/get-content-upload-url-response.proto";
+
+import "messages/assets/asset.proto";
+import "messages/assets/asset-id-with-project-id.proto";
+import "messages/assets/asset-with-project-id.proto";
+
+import "messages/ar/delete-ar-asset-request.proto";
+import "messages/ar/ar-asset-with-project-id.proto";
+import "messages/ar/ar-asset.proto";
+import "messages/ar/ar-asset-override.proto";
+import "messages/ar/contexts-ids-with-project-id.proto";
+import "messages/ar/override-ar-asset-request.proto";
+
+import "messages/data/data-with-project-id.proto";
+
+import "messages/remote-assistance/create-room-request.proto";
+import "messages/remote-assistance/create-room-response.proto";
+import "messages/remote-assistance/join-room-request.proto";
+import "messages/remote-assistance/room-event.proto";
+import "messages/remote-assistance/send-ice-candidate-to-peer-request.proto";
+import "messages/remote-assistance/send-session-description-to-peer-request.proto";
+
+import "messages/events/event.proto";
+import "messages/events/events-registration-request.proto";
+
+
+service AugmenciaApi {
+  rpc GetMetadata (google.protobuf.Empty) returns (ServerMetadata);
+
+  // Users
+  rpc CreateUser (Users.CreateUserRequest) returns (google.protobuf.Empty);
+  rpc VerifyUser (Users.VerifyUserRequest) returns (google.protobuf.Empty);
+  rpc ModifyUserProfile (Users.ModifyUserProfileRequest) returns (google.protobuf.Empty);
+
+  // Organizations
+  rpc GetOrganizations (google.protobuf.Empty) returns (stream Organizations.Organization);
+  rpc CreateOrganization (Organizations.CreateOrganizationRequest) returns (Organizations.Organization);
+  rpc ModifyOrganization (Organizations.ModifyOrganizationRequest) returns (Organizations.Organization);
+  rpc DeleteOrganization (Organizations.DeleteOrganizationRequest) returns (google.protobuf.Empty);
+  rpc SetMembersInvitationsToOrganization (Organizations.SetMembersInvitationsToOrganizationRequest) returns (google.protobuf.Empty);
+  rpc AcceptOrganizationInvitation (Organizations.AcceptOrganizationInvitationRequest) returns (google.protobuf.Empty);
+  rpc ModifyOrganizationMembers (Organizations.ModifyOrganizationMembersRequest) returns (Organizations.Organization);
+  rpc LeaveOrganization (Organizations.LeaveOrganizationRequest) returns (google.protobuf.Empty);
+  rpc DeleteMembersFromOrganization (Organizations.DeleteMembersFromOrganizationRequest) returns (google.protobuf.Empty);
+  rpc CreateOrganizationGroup (Organizations.CreateOrganizationGroupRequest) returns (Organizations.OrganizationGroup);
+  rpc ModifyOrganizationGroup (Organizations.ModifyOrganizationGroupRequest) returns (Organizations.OrganizationGroup);
+  rpc DeleteOrganizationGroups (Organizations.DeleteOrganizationGroupsRequest) returns (google.protobuf.Empty);
+
+  // API Keys
+  rpc CreateAPIKey (ApiKeys.CreateAPIKeyRequest) returns (ApiKeys.CreateAPIKeyResponse);
+  rpc GetAPIKeys (ApiKeys.GetApiKeysRequest) returns (stream ApiKeys.APIKeyMetadata);
+  rpc DeleteAPIKeys (ApiKeys.DeleteAPIKeysRequest) returns (google.protobuf.Empty);
+    
+  // Projects
+  rpc GetProjects(google.protobuf.Empty) returns (stream Projects.Project);
+  rpc AddUserProject(Projects.AddUserProjectRequest) returns (Projects.Project);
+  rpc AddOrganizationProject(Projects.AddOrganizationProjectRequest) returns (Projects.Project);
+  rpc UpdateProject(Projects.Project) returns (Projects.Project);
+  rpc DeleteProject(google.protobuf.StringValue) returns (google.protobuf.Empty);
+  rpc JoinProject(Projects.JoinProjectRequest) returns (Projects.Project);
+  rpc LeaveProject(google.protobuf.StringValue) returns (google.protobuf.Empty);
+
+  // Contents management
+  rpc GetContentUploadUrl(google.protobuf.StringValue) returns (Contents.GetContentUploadUrlResponse);
+  rpc GetContentDownloadUrl(Contents.ContentIdWithProjectId) returns (google.protobuf.StringValue);
+
+  // Assets
+  rpc GetAssetsFromProject(google.protobuf.StringValue) returns (stream Assets.Asset);
+  rpc AddAsset(Assets.AssetWithProjectId) returns (Assets.Asset);
+  rpc UpdateAsset(Assets.AssetWithProjectId) returns (Assets.Asset);
+  rpc DeleteAsset(Assets.AssetIdWithProjectId) returns (google.protobuf.Empty);
+
+  // AR
+  rpc GetARAssets(AR.ContextsIdsWithProjectId) returns (stream AR.ARAsset);
+  rpc AddARAsset(AR.ARAssetWithProjectId) returns (AR.ARAsset);
+  rpc UpdateARAsset(AR.ARAssetWithProjectId) returns (AR.ARAsset);
+  rpc DeleteARAsset(AR.DeleteARAssetRequest) returns (google.protobuf.Empty);
+  rpc OverrideARAsset(AR.OverrideARAssetRequest) returns (AR.ARAssetOverride);
+
+  // Data
+  rpc SendData(Data.DataWithProjectId) returns (google.protobuf.Empty);
+
+  // Remote assistance
+  rpc CreateRoom(RemoteAssistance.CreateRoomRequest) returns (RemoteAssistance.CreateRoomResponse);
+  rpc JoinRoom(RemoteAssistance.JoinRoomRequest) returns (stream RemoteAssistance.RoomEvent);
+  rpc SendSessionDescriptionToPeer(RemoteAssistance.SendSessionDescriptionToPeerRequest) returns (google.protobuf.Empty);
+  rpc SendIceCandidateToPeer(RemoteAssistance.SendIceCandidateToPeerRequest) returns (google.protobuf.Empty);
+
+  // Events
+  rpc RegisterToEvents(Events.EventsRegistrationRequest) returns (stream Events.Event);
+}

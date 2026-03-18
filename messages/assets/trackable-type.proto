@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Assets;
+
+enum TrackableType {
+    QR_CODE = 0;
+    APRILTAG_16H5 = 1;
+    APRILTAG_25H9 = 2;
+    APRILTAG_36H10 = 3;
+    APRILTAG_36H11 = 4;
+    APRILTAG_CIRCLE21H7 = 5;
+    APRILTAG_CIRCLE49H12 = 6;
+    APRILTAG_CUSTOM48H12 = 7;
+    APRILTAG_STANDARD41H12 = 8;
+    APRILTAG_STANDARD52H13 = 9;
+    MARKERLESS_IMAGE = 10;
+}

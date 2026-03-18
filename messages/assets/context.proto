@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Assets;
+
+import "messages/assets/trackable-type.proto";
+import "messages/ar/ar-asset-override.proto";
+
+message Context {
+    string id = 1;
+    string name = 2;
+    string parent_id = 3;
+    int64 creation_date = 4;
+    int64 modification_date = 5;
+    repeated string included_contexts_ids = 6;
+    repeated TrackableType trackable_types = 7;
+    repeated string tracked_images_ids = 8;
+    repeated AR.ARAssetOverride ar_asset_overrides = 9;
+}

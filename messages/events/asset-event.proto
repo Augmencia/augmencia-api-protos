@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Events;
+
+import "messages/assets/asset.proto";
+
+message AssetEvent {
+    oneof event {
+        Assets.Asset added = 1;
+        Assets.Asset modified = 2;
+        string deleted = 3;
+    }
+}

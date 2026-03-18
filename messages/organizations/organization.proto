@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Organizations;
+
+import "messages/common/calls-limits.proto";
+import "messages/organizations/organization-group.proto";
+import "messages/organizations/organization-member.proto";
+import "messages/organizations/organization-subscription.proto";
+
+message Organization {
+  string id = 1;
+  string name = 2;
+  string owner_id = 3;
+  int32 max_members = 4;
+  int32 max_projects = 5;
+  int32 stored_in_mib = 6;
+  int32 storage_limit_in_mib = 7;
+  int32 download_limit_in_mib = 8;
+  int32 downloaded_mib = 9;
+  int32 api_keys_max_requests_per_second = 10;
+  OrganizationSubscription subscription = 11;
+  repeated OrganizationMember members = 12;
+  repeated OrganizationGroup groups = 13;
+  repeated string invited_emails = 14;
+  optional Common.CallsLimits calls_limits = 15;
+}

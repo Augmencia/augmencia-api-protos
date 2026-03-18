@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Organizations;
+
+message OrganizationMember {
+  string id = 1;
+  string username = 2;
+  bool can_manage_members = 3;
+  bool can_manage_api_keys = 4;
+  bool can_manage_projects = 5;
+  bool can_create_projects = 6;
+  bool can_perform_calls = 7;
+}

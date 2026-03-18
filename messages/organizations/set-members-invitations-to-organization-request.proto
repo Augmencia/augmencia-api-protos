@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Organizations;
+
+import "messages/common/language-code.proto";
+
+message SetMembersInvitationsToOrganizationRequest {
+  string organization_id = 1;
+  repeated string emails = 2;
+  optional Common.LanguageCode language_code = 3;
+}

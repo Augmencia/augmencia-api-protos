@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Events;
+
+import "messages/projects/project.proto";
+
+message ProjectEvent {
+    oneof event {
+        Projects.Project added = 1;
+        Projects.Project modified = 2;
+        string deleted = 3;
+    }
+}

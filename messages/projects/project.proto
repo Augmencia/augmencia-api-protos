@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Projects;
+
+import "messages/projects/organization-metadata.proto";
+import "messages/projects/project-user.proto";
+import "messages/projects/project-organization-group.proto";
+
+message Project {
+    string id = 1;
+    string name = 2;
+    int64 creation_date = 3;
+    int64 modification_date = 4;
+    optional string owner_id = 5;
+    optional OrganizationMetadata organization = 6;
+    repeated ProjectUser users = 7;
+    repeated ProjectOrganizationGroup organization_groups = 8;
+    repeated string invited_users_emails = 9;
+    bool is_loadable = 10;
+    int32 project_size_in_mib = 11;
+}

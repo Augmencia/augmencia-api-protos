@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Users;
+
+import "messages/common/language-code.proto";
+
+message VerifyUserRequest {
+  string validation_code = 1;
+  string email = 2;
+  optional Common.LanguageCode language_code = 3;
+}

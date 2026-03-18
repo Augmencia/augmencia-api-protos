@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Projects;
+
+import "messages/projects/project-user.proto";
+import "messages/projects/project-organization-group.proto";
+
+message AddOrganizationProjectRequest {
+    string name = 1;
+    string organization_id = 2;
+    repeated ProjectUser users = 3;
+    repeated ProjectOrganizationGroup organization_groups = 4;
+    repeated string invited_users_emails = 5;
+}   

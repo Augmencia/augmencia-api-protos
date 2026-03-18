@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Augmencia.Protos.RemoteAssistance;
+
+import "messages/remote-assistance/entity-type.proto";
+
+message JoinRoomRequest {
+     EntityType entity_type = 1;
+     string entity_id = 2;
+     string room_id = 3;
+     string code = 4;
+     optional bytes data = 5;
+}

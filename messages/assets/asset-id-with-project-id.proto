@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Assets;
+
+message AssetIdWithProjectId {
+    string project_id = 1;
+    string asset_id = 2;
+}

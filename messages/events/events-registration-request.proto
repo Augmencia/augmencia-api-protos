@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Events;
+
+import "messages/ar/contexts-ids-with-project-id.proto";
+
+message EventsRegistrationRequest {
+  bool register_to_organizations_events = 1;
+  bool register_to_projects_events = 2;
+  repeated string register_to_projects_assets_events = 3;
+  repeated AR.ContextsIdsWithProjectId register_to_contexts_events = 4;
+  repeated string register_to_projects_data_events = 5;
+}

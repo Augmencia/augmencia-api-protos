@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package Augmencia.Protos.ApiKeys;
+
+message GetApiKeysRequest {
+  optional string organization_id = 1;
+}

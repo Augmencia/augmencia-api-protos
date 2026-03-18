@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Projects;
+
+message ProjectUser {
+    string id = 1;
+    string username = 2;
+    bool can_manage_project = 3;
+    bool can_manage_members = 4;
+    bool can_manage_assets = 5;
+    bool can_manage_ar_assets = 6;
+}

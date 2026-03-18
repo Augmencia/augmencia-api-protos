@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Augmencia.Protos.AR;
+
+message ContextsIdsWithProjectId {
+    string project_id = 1;
+    repeated string contexts_ids = 2;
+}

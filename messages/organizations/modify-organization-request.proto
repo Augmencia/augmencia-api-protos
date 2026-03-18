@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Organizations;
+
+message ModifyOrganizationRequest {
+  string id = 1;
+  string name = 2;
+}

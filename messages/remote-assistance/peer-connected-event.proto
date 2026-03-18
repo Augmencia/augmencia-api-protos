@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Augmencia.Protos.RemoteAssistance;
+
+message PeerConnectedEvent {
+     string peer_id = 1;
+     bytes data = 2;
+}

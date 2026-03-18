@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Organizations;
+
+message OrganizationGroupMember {
+  string id = 1;
+  bool can_manage_group = 2;
+  bool can_manage_group_members = 3;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Common;
+
+enum LanguageCode {
+  DE = 0;
+  EN = 1;
+  ES = 2;
+  FR = 3;
+  IT = 4;
+  NL = 5;
+}

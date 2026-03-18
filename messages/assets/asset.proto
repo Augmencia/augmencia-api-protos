@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Assets;
+
+import "messages/assets/folder.proto";
+import "messages/assets/context.proto";
+import "messages/assets/image.proto";
+import "messages/assets/text.proto";
+import "messages/assets/object-3d.proto";
+
+message Asset {
+    oneof item {
+        Folder folder = 1;
+        Context context = 2;
+        Image image = 3;
+        Text text = 4;
+        Object3D object3D = 5;
+    }
+}

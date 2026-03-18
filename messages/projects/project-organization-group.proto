@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Projects;
+
+import "messages/projects/project-organization-group-user.proto";
+
+message ProjectOrganizationGroup {
+    string id = 1;
+    string name = 2;
+    repeated ProjectOrganizationGroupUser users = 3;
+    bool can_manage_project = 4;
+    bool can_manage_members = 5;
+    bool can_manage_assets = 6;
+    bool can_manage_ar_assets = 7;
+}

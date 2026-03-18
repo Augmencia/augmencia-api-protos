@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package Augmencia.Protos.AR;
+
+import "messages/ar/ar-asset-state.proto";
+import "messages/ar/animation-loop.proto";
+
+message ARAssetOverride {
+    string ar_asset_id = 1;
+    string context_id = 2;
+    int64 creation_date = 3;
+    int64 modification_date = 4;
+    AnimationLoop loop = 5;
+    repeated ARAssetState states = 6;
+    string go_to_context_on_click = 7;
+    string go_to_url_on_click = 8;
+    repeated string data_to_send_on_click = 9;
+}
