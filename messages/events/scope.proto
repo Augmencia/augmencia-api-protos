@@ -8,6 +8,6 @@ message Scope {
   bool organizations = 1;
   bool projects = 2;
   repeated string assets = 3;
-  repeated AR.ContextsIdsWithProjectId contexts = 4;
+  repeated AR.ContextsIdsWithProjectId ar_assets = 4;
   repeated string data = 5;
 }
