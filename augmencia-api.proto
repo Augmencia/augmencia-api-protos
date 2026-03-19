@@ -60,7 +60,8 @@ import "messages/remote-assistance/send-ice-candidate-to-peer-request.proto";
 import "messages/remote-assistance/send-session-description-to-peer-request.proto";
 
 import "messages/events/event.proto";
-import "messages/events/events-registration-request.proto";
+import "messages/events/scope.proto";
+import "messages/events/update-events-scope-request.proto";
 
 
 service AugmenciaApi {
@@ -126,5 +127,6 @@ service AugmenciaApi {
   rpc SendIceCandidateToPeer(RemoteAssistance.SendIceCandidateToPeerRequest) returns (google.protobuf.Empty);
 
   // Events
-  rpc RegisterToEvents(Events.EventsRegistrationRequest) returns (stream Events.Event);
+  rpc RegisterToEvents(Events.Scope) returns (stream Events.Event);
+  rpc UpdateEventsScope(Events.UpdateEventsScopeRequest) returns (google.protobuf.Empty);
 }

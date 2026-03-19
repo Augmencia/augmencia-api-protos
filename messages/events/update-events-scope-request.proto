@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Events;
+
+import "messages/events/scope.proto";
+
+message UpdateEventsScopeRequest {
+  string stream_id = 1;
+  Scope scope = 2;
+}

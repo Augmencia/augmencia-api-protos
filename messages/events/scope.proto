@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Augmencia.Protos.Events;
+
+import "messages/ar/contexts-ids-with-project-id.proto";
+
+message Scope {
+  bool organizations = 1;
+  bool projects = 2;
+  repeated string assets = 3;
+  repeated AR.ContextsIdsWithProjectId contexts = 4;
+  repeated string data = 5;
+}

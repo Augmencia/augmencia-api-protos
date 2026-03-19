@@ -9,10 +9,11 @@ import "messages/events/ar-asset-event.proto";
 
 message Event {
     oneof event {
-        OrganizationEvent organization_event = 1;
-        ProjectEvent project_event = 2;
-        AssetEvent asset_event = 3;
-        ARAssetEvent ar_asset_event = 4;
-        string data = 5;
+        string stream_id = 1;
+        OrganizationEvent organization_event = 2;
+        ProjectEvent project_event = 3;
+        AssetEvent asset_event = 4;
+        ARAssetEvent ar_asset_event = 5;
+        string data = 6;
     }
 }
