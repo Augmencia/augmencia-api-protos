@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package Augmencia.Protos.Events;
 
-import "google/protobuf/wrappers.proto";
-
 import "messages/events/organization-event.proto";
 import "messages/events/project-event.proto";
 import "messages/events/asset-event.proto";
