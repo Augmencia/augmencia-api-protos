@@ -2,6 +2,6 @@ syntax = "proto3";
 
 package Augmencia.Protos.Users;
 
-message ModifyUserProfileRequest {
+message UserProfile {
   string username = 1;
 }
