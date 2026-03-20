@@ -2,6 +2,17 @@ syntax = "proto3";
 
 package Augmencia.Protos.Users;
 
+import "messages/common/calls-limits.proto";
+
 message UserProfile {
-  string username = 1;
+  string id = 1;
+  string username = 2;
+  int32 max_projects = 3;
+  int32 storage_limit_in_mib = 4;
+  int64 storage_used = 5;
+  int32 download_limit_in_mib = 6;
+  int64 downloaded = 7;
+  int32 api_keys_max_requests_per_second = 8;
+  string subscription = 9;
+  optional Augmencia.Protos.Common.CallsLimits calls_limits = 10;
 }

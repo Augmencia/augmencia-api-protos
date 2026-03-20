@@ -8,6 +8,7 @@ import "google/protobuf/wrappers.proto";
 import "messages/server-metadata.proto";
 
 import "messages/users/create-user-request.proto";
+import "messages/users/modify-user-profile-request.proto";
 import "messages/users/user-profile.proto";
 import "messages/users/verify-user-request.proto";
 
@@ -71,7 +72,7 @@ service AugmenciaApi {
   rpc CreateUser (Users.CreateUserRequest) returns (google.protobuf.Empty);
   rpc VerifyUser (Users.VerifyUserRequest) returns (google.protobuf.Empty);
   rpc GetUserProfile (google.protobuf.Empty) returns (Users.UserProfile);
-  rpc ModifyUserProfile (Users.UserProfile) returns (google.protobuf.Empty);
+  rpc ModifyUserProfile (Users.ModifyUserProfileRequest) returns (Users.UserProfile);
 
   // Organizations
   rpc GetOrganizations (google.protobuf.Empty) returns (stream Organizations.Organization);
