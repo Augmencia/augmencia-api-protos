@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package Augmencia.Protos.RemoteAssistance;
-
-enum EntityType {
-     ORGANIZATION = 0;
-     USER = 1;
-}
