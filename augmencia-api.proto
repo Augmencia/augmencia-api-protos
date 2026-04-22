@@ -5,7 +5,7 @@ package Augmencia.Protos;
 import "google/protobuf/empty.proto";
 import "google/protobuf/wrappers.proto";
 
-import "messages/server-metadata.proto";
+import "messages/server-config.proto";
 
 import "messages/users/create-user-request.proto";
 import "messages/users/modify-user-profile-request.proto";
@@ -66,7 +66,7 @@ import "messages/events/update-events-scope-request.proto";
 
 
 service AugmenciaApi {
-  rpc GetMetadata (google.protobuf.Empty) returns (ServerMetadata);
+  rpc GetConfig (google.protobuf.Empty) returns (ServerConfig);
 
   // Users
   rpc CreateUser (Users.CreateUserRequest) returns (google.protobuf.Empty);
