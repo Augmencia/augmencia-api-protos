@@ -10,4 +10,5 @@ message ServerConfig {
 	string oidc_client_id = 5;
 	bool require_oidc_profiles = 6;
 	bool can_create_users = 7;
+	optional string edit_profile_url = 8;
 }
